@@ -1,5 +1,6 @@
 @borderRadius: 0;
 @nearlyOpaque: 85%;
+@disabled: 65%;
 @faded: 61%;
 @transition: 0.2s ease;
 @white: #fff;
@@ -17,7 +18,9 @@
 @secondary-lavender: #967adc;
 
 @color-text: @black;
-@color-disabled-text: @grey;
+@color-inverted-text: @white;
+@color-disabled-text: fade(@black, @disabled);
+@color-inverted-disabled-text: fade(@white, @disabled);
 @color-info: @blue;
 @color-link: @red;
 @color-error: @secondary-red;
@@ -25,6 +28,8 @@
 
 @color-focus-border: @light-grey;
 @color-border: @hairline-grey;
+@color-inverted-focus-border: fade(@white, 40%);
+@color-inverted-border: fade(@white, 20%);
 
 .hide {
   display: none !important;
@@ -35,12 +40,21 @@
   -webkit-transform: @transform;
 }
 
-.transition(@t) {
-  transition: @t;
-  -webkit-transition: @t;
+.transition(...) {
+  transition: @arguments;
+  -webkit-transition: @arguments;
+}
+
+.box-shadow(...) {
+  box-shadow: @arguments;
+  -webkit-box-shadow: @arguments;
 }
 
 .backface-visibility(@t) {
   backface-visibility: @t;
   -webkit-backface-visibility: @t;
+}
+
+.disabled {
+  opacity: 0.61;
 }
