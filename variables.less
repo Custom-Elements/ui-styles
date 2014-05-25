@@ -1,11 +1,12 @@
 @borderRadius: 0;
-@nearlyOpaque: 80%;
-@faded: 50%;
+@nearlyOpaque: 85%;
+@faded: 61%;
 @transition: 0.2s ease;
 @white: #fff;
 @black: fade(#000, @nearlyOpaque);
-@grey: #5b5b5b;
-@light-grey: #cccccc;
+@grey: fade(#000, @faded)
+@light-grey: fade(#000, 20%);
+@hairline-grey: fade(#000, 15%);
 @green:#c8ed8d;
 @red: #ef272d;
 @blue: #0088cc;
@@ -16,10 +17,14 @@
 @secondary-lavender: #967adc;
 
 @color-text: @black;
+@color-disabled-text: @grey;
 @color-info: @blue;
 @color-link: @red;
 @color-error: @secondary-red;
 @color-success: @secondary-green;
+
+@color-focus-border: @light-grey;
+@color-border: @hairline-grey;
 
 .hide {
   display: none !important;
