@@ -1,13 +1,14 @@
 @borderRadius: 0;
 @nearlyOpaque: 85%;
+@justahint: 12%;
 @disabled: 33%;
 @faded: 61%;
 @transition: 0.2s ease;
 @white: #fff;
-@black: fade(#000, @nearlyOpaque);
+@black: #333333;
 @grey: fade(#000, @faded);
-@light-grey: fade(#000, 20%);
-@hairline-grey: fade(#000, 15%);
+@light-grey: fade(#000, @disabled);
+@hairline-grey: fade(#000, @justahint);
 @green:#c8ed8d;
 @red: #ef272d;
 @yellow: #fae843;
@@ -20,8 +21,8 @@
 @secondary-lavender: #967adc;
 
 @color-text: #454545;
+@color-disabled-text: fade(@color-text, @disabled);
 @color-inverted-text: @white;
-@color-disabled-text: fade(@black, @disabled);
 @color-inverted-disabled-text: fade(@white, @disabled);
 @color-info: @blue;
 @color-link: @red;
@@ -30,8 +31,8 @@
 
 @color-focus-border: @light-grey;
 @color-border: @hairline-grey;
-@color-inverted-focus-border: fade(@white, 40%);
-@color-inverted-border: fade(@white, 20%);
+@color-inverted-focus-border: fade(@white, @faded);
+@color-inverted-border: fade(@white, @disabled);
 
 .hide {
   display: none !important;
