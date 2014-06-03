@@ -3,5 +3,8 @@
   "version": "0.0.0",
   "description": "Less variables to share across polymer elements",
   "author": "Will Ballard",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "less": "~1.7.0"
+  }
 }
