@@ -2,21 +2,13 @@
   "name": "ui-styles",
   "version": "0.0.0",
   "dependencies": {
-    "coffeeify": "",
     "coffee-script": "",
-    "browserify": "",
-    "browserify-data": "",
     "gulp": "",
     "gulp-browserify": "",
-    "gulp-shell": "",
     "gulp-less": "",
-    "gulp-replace": "",
     "gulp-rename": "",
-    "gulp-concat": "",
-    "vulcanize": "",
     "express": "",
-    "polymer": "git://github.com/Custom-Elements/polymer",
-    "express-livereload": "0.0.24"
+    "express-livereload": ""
   },
   "license": "MIT",
   "scripts": {
