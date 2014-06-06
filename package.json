@@ -3,17 +3,10 @@
   "version": "0.0.0",
   "repository": "git@github.com:Custom-Elements/ui-styles.git",
   "dependencies": {
-    "coffee-script": "",
-    "gulp": "",
-    "gulp-browserify": "",
-    "gulp-less": "",
-    "gulp-rename": "",
-    "express": "",
-    "express-livereload": ""
+    "less": ""
   },
   "license": "MIT",
   "scripts": {
-    "postinstall": "gulp build",
-    "test": "gulp watch"
+    "postinstall": "make"
   }
 }
