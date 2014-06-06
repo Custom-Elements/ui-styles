@@ -1,6 +1,7 @@
 {
   "name": "ui-styles",
   "version": "0.0.0",
+  "repository": "git@github.com:Custom-Elements/ui-styles.git",
   "dependencies": {
     "coffee-script": "",
     "gulp": "",
