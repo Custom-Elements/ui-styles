@@ -1,4 +1,4 @@
 .PHONY: build
 
 build:
-	lessc typography.less ui-styles.css
+	lessc ui-styles.less ui-styles.css
