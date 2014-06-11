@@ -112,8 +112,29 @@
   opacity: 0 !important;
 }
 
+[closeup] {
+  opacity: 1.0;
+  .transition(height @transition, opacity @transition;);
+}
+
+[closeup][hide] {
+  display: inline-block !important;
+  height: 0 !important;
+  opacity: 0 !important;
+}
+
 [tile] {
   padding: 1em;
   background-color: @hairline-grey;
   border: 1px solid @hairline-grey;
+}
+[animated] {
+  opacity: 1.0;
+  .transition(width @transition, opacity @transition;);
+}
+
+[animated][hide] {
+  display: inline-block !important;
+  width: 0 !important;
+  opacity: 0 !important;
 }
