@@ -123,6 +123,7 @@ p, h1, h2, h3, h4, h5, h6, ul, ol, dl, blockquote {
   margin-bottom: 0.33333em;
   margin-top: 0.6666em;
   vertical-align: middle;
+  padding: 0;
 }
 
 p {
@@ -190,4 +191,17 @@ pre {
   padding: 1em;
   word-wrap: break-word;
 }
+
+ul {
+  list-style: none;
+}
+
+li {
+  border-bottom: 1px dotted @hairline-grey;
+}
+
+li:last-child {
+  border-bottom: 0;
+}
+
 
