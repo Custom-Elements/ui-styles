@@ -7,9 +7,9 @@
 @input-transition: 0.1s ease-out;
 @white: #fff;
 @black: #333333;
-@grey: fade(#000, @faded);
-@light-grey: fade(#000, @disabled);
-@hairline-grey: fade(#000, @justahint);
+@grey: fade(@black, @faded);
+@light-grey: fade(@black, @disabled);
+@hairline-grey: fade(@black, @justahint);
 @green:#c8ed8d;
 @red: #ef272d;
 @yellow: #fae843;
@@ -44,6 +44,15 @@
   -webkit-transform: @transform;
 }
 
+//A flat background isn't really flat, it would look odd
+.flat {
+  background-image: linear-gradient(fade(@black, 1%), fade(@black, 6%) 80%, fade(@black, 4%));
+}
+
+.dark-tint {
+  background-image: linear-gradient(fade(@black, @faded), fade(@black, @faded + 6%) 80%, fade(@black, @faded + 4%));
+}
+
 //border with a shadow
 .border {
   .box-shadow(0px 0px 0px 1px @color-border inset);
@@ -51,6 +60,10 @@
 
 .focused-border {
   .box-shadow(0px 0px 0px 1px @color-focus-border inset);
+}
+.input-focused-border {
+  @border-list: 0px 0px 0px 1px @color-focus-border inset, 0.3em 0em 0em 0em @color-focus-border inset;
+  .box-shadow(@border-list);
 }
 
 .cannot-select-text {
