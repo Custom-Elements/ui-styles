@@ -4,6 +4,7 @@
 @disabled: 33%;
 @faded: 61%;
 @transition: 0.2s ease;
+@input-transition: 0.1s ease-out;
 @white: #fff;
 @black: #333333;
 @grey: fade(#000, @faded);
@@ -41,6 +42,24 @@
 .transform(@transform) {
   transform: @transform;
   -webkit-transform: @transform;
+}
+
+//border with a shadow
+.border {
+  .box-shadow(0px 0px 0px 1px @color-border inset);
+}
+
+.focused-border {
+  .box-shadow(0px 0px 0px 1px @color-focus-border inset);
+}
+
+.cannot-select-text {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .transition(...) {
