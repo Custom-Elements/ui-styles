@@ -3,7 +3,7 @@
 
 html {
   font-style: normal;
-  font-weight: normal;
+  font-weight: 200;
   color: @color-text;
   -webkit-font-smoothing: antialiased;
 }
@@ -41,27 +41,27 @@ a:hover {
 
 h1 {
   font-size: 3rem;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 h2 {
   font-size: 2.4rem;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 h3 {
   font-size: 2.2rem;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 h4 {
   font-size: 2rem;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 h5 {
   font-size: 1.8rem;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 h6 {
@@ -129,11 +129,9 @@ address {
 }
 
 sup {
-  vertical-align: text-top;
 }
 
 sub {
-  vertical-align: bottom;
 }
 
 mark {
@@ -166,4 +164,24 @@ li {
 
 li:last-child {
   border-bottom: 0;
+}
+
+input, textarea {
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+info {
+  color: @color-info;
+  display: inline;
+}
+
+error {
+  color: @color-error;
+  display: inline;
+}
+
+success {
+  color: @color-success;
+  display: inline;
 }
