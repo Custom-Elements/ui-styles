@@ -17,3 +17,39 @@ box {
   margin-left: 0;
   border: 1px solid @color-border;
 }
+
+border {
+  display: block;
+  border: 1px solid @color-border;
+}
+
+heading, .heading {
+  display: block;
+  background-color: @light-grey;
+  .light-tint;
+}
+
+//layout control, fill up the entire parent screen
+[fullscreen], [full], .full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+[fill], .fill {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+//layout control, dock to the left of the screen
+[leftdock] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}

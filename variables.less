@@ -3,7 +3,7 @@
 @justahint: 10%;
 @disabled: 33%;
 @faded: 61%;
-@transition: 0.2s ease;
+@transition: 0.2s ease-out;
 @input-transition: 0.1s ease-out;
 @white: #fff;
 @black: #333333;
@@ -44,9 +44,18 @@
   -webkit-transform: @transform;
 }
 
+.transform-origin(@transform) {
+  transform-origin: @transform;
+  -webkit-transform-origin: @transform;
+}
+
 //A flat background isn't really flat, it would look odd
 .flat {
   background-image: linear-gradient(fade(@black, 1%), fade(@black, 6%) 80%, fade(@black, 4%));
+}
+
+.ultra-dark-tint {
+  background-image: linear-gradient(fade(@black, @nearlyOpaque), fade(@black, @nearlyOpaque + 6%) 80%, fade(@black, @nearlyOpaque + 4%));
 }
 
 .dark-tint {
