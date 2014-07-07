@@ -15,18 +15,38 @@ box {
   margin-right: 0;
   margin-bottom: 1em;
   margin-left: 0;
+  .border;
+}
+
+border, .border {
+  display: block;
   border: 1px solid @color-border;
 }
 
-border {
-  display: block;
+[border] {
   border: 1px solid @color-border;
+}
+
+panel, .panel {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  p, h1, h2, h3, h4, h5, h6, ul, ol, dl, blockquote {
+    margin: 0;
+  }
 }
 
 heading, .heading {
-  display: block;
-  background-color: @light-grey;
-  .light-tint;
+  .panel;
+  background-color: @hairline-grey;
+  .flat;
+}
+
+well, .well {
+  .panel;
+  padding: 1em;
 }
 
 //layout control, fill up the entire parent screen
