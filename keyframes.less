@@ -2,7 +2,10 @@
 //these need to go in the light DOM, much like fonts
 .slideUpKeyframes {
   0% {
-    .transform(translateY(200%));
+    .transform(translateY(2000em));
+  }
+  0% {
+    .transform(translateY(500%));
   }
   50% {
     .transform(translateY(-8%));
@@ -27,8 +30,11 @@
   0% {
     .transform(translateY(0%));
   }
+  99% {
+    .transform(translateY(500%));
+  }
   100% {
-    .transform(translateY(200%));
+    .transform(translateY(2000em));
   }
 }
 @keyframes slideDown {.slideDownKeyframes;}
