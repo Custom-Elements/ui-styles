@@ -1,8 +1,11 @@
+@deep: ~'/deep/';
 @borderRadius: 0;
 @nearlyOpaque: 85%;
 @justahint: 10%;
 @disabled: 33%;
 @faded: 61%;
+@animation-duration: 0.5s;
+@animation-duration-fast: 0.2s;
 @transition: 0.2s ease-out;
 @input-transition: 0.1s ease-out;
 @white: #fff;
@@ -173,6 +176,7 @@
   background-color: @hairline-grey;
   border: 1px solid @hairline-grey;
 }
+
 [animated] {
   opacity: 1.0;
   .transition(width @transition, opacity @transition;);
@@ -184,6 +188,20 @@
   opacity: 0 !important;
 }
 
-.sheen {
-  background-image: linear-gradient(rgba(255,255,255,0.01), rgba(0,0,0,0.1));
+[offscreen] {
+  .transform(translateY(200%));
+}
+
+//animation macros
+.animation (@arguments) {
+  animation: @arguments;
+  -webkit-animation: @arguments;
+}
+
+.slideUp {
+  .animation(slideUp 1s 1 ease-out);
+}
+
+.slideDown {
+  .animation(slideDown 1s 1 ease-out);
 }
