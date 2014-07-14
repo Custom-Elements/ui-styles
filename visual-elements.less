@@ -1,3 +1,5 @@
+@import "./variables.less";
+
 container {
   display: block;
   max-width: 60em;
@@ -23,6 +25,15 @@ border, .border {
   border: 1px solid @color-border;
 }
 
+background, .background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .panel;
+  background-color: @hairline-grey;
+  .flat;
+}
+
 [border] {
   border: 1px solid @color-border;
 }
@@ -33,15 +44,15 @@ panel, .panel {
   align-content: center;
   align-items: center;
   text-align: center;
-  p, h1, h2, h3, h4, h5, h6, ul, ol, dl, blockquote {
-    margin: 0;
-  }
 }
 
 heading, .heading {
   .panel;
   background-color: @hairline-grey;
   .flat;
+  p, h1, h2, h3, h4, h5, h6, ul, ol, dl, blockquote {
+    margin: 0;
+  }
 }
 
 well, .well {
@@ -72,4 +83,27 @@ well, .well {
   top: 0;
   left: 0;
   bottom: 0;
+}
+
+//stack children right on top of one another
+stack {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > :nth-child(2) {
+    position: absolute;
+    left: -27%;
+    top: -23%;
+  }
+}
+
+[larger], .larger {
+  font-size: 1.5em;
+  line-height: 1em;
+}
+
+[invert], .invert {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
 }
