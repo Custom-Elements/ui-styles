@@ -35,8 +35,8 @@
 
 @color-focus-border: @light-grey;
 @color-border: @hairline-grey;
-@color-inverted-focus-border: fade(@white, @faded);
-@color-inverted-border: fade(@white, @disabled);
+@color-inverted-focus-border: @white;
+@color-inverted-border: fade(@white, @faded);
 
 .hide {
   display: none !important;
@@ -69,17 +69,34 @@
   background-image: linear-gradient(fade(@white, @faded), fade(@white, @faded + 6%) 80%, fade(@white, @faded + 4%));
 }
 
+//color inversion, this is useful to disable things
+.invert {
+  -webkit-filter: invert(0.9);
+  filter: invert(0.9);
+}
+
 //border with a shadow
 .border {
-  .box-shadow(0px 0px 0px 1px @color-border inset);
+  border: 1px solid @color-border;
+}
+.bottom-border {
+  border-bottom: 1px solid @color-border;
+}
+.bottom-inverted-border {
+  border-bottom: 1px solid @color-inverted-border;
 }
 
 .focused-border {
-  .box-shadow(0px 0px 0px 1px @color-focus-border inset);
+  border: 1px solid @color-focus-border;
 }
-.input-focused-border {
-  @border-list: 0px 0px 0px 1px @color-focus-border inset, 0.3em 0em 0em 0em @color-focus-border inset;
-  .box-shadow(@border-list);
+.bottom-focused-border {
+  border-bottom: 1px solid @color-focus-border;
+}
+.bottom-inverted-focused-border {
+  border-bottom: 1px solid @color-inverted-focus-border;
+}
+.focused-highlight {
+  .box-shadow(0px 0px 2px -1px @color-focus-border inset);
 }
 
 .cannot-select-text {
@@ -190,6 +207,26 @@
 
 [offscreen] {
   .transform(translateY(2000em));
+}
+
+[red] {
+  color: @red;
+}
+
+[yellow] {
+  color: @yellow;
+}
+
+[green] {
+  color: @green;
+}
+
+[blue] {
+  color: @blue;
+}
+
+[magenta], [lavender] {
+  color: @lavender;
 }
 
 //animation macros

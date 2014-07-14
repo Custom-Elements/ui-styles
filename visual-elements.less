@@ -1,6 +1,6 @@
 @import "./variables.less";
 
-container {
+container, [container] {
   display: block;
   max-width: 60em;
   margin-top: 0;
@@ -26,12 +26,15 @@ border, .border {
 }
 
 background, .background {
+  display: block;
   position: relative;
   width: 100%;
   height: 100%;
-  .panel;
-  background-color: @hairline-grey;
   .flat;
+}
+
+background[inverted] {
+  background-color: @black;
 }
 
 [border] {
@@ -106,4 +109,22 @@ stack {
 [invert], .invert {
   -webkit-filter: invert(100%);
   filter: invert(100%);
+}
+
+.disabler-enabled {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  .transition(@transition);
+  .transform(rotateX(180deg));
+  .backface-visibility(hidden);
+}
+
+.disabler-disabled {
+  .transform(rotateX(0deg));
+  background-color: @hairline-grey;
+  .flat;
 }
