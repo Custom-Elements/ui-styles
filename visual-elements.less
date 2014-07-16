@@ -35,6 +35,7 @@ background, .background {
 
 background[inverted] {
   background-color: @black;
+  color: @white;
 }
 
 [border] {
@@ -47,20 +48,6 @@ panel, .panel {
   align-content: center;
   align-items: center;
   text-align: center;
-}
-
-heading, .heading {
-  .panel;
-  background-color: @hairline-grey;
-  .flat;
-  p, h1, h2, h3, h4, h5, h6, ul, ol, dl, blockquote {
-    margin: 0;
-  }
-}
-
-well, .well {
-  .panel;
-  padding: 1em;
 }
 
 //layout control, fill up the entire parent screen
