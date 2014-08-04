@@ -1,6 +1,8 @@
 @import "./variables.less";
+@import "./flags.less";
+@import "./borders.less";
 
-container, [container] {
+container {
   display: block;
   max-width: 60em;
   margin-top: 0;
@@ -20,12 +22,7 @@ box {
   .border;
 }
 
-border, .border {
-  display: block;
-  border: 1px solid @color-border;
-}
-
-background, .background {
+background {
   display: block;
   position: relative;
   width: 100%;
@@ -38,11 +35,7 @@ background[inverted] {
   color: @white;
 }
 
-[border] {
-  border: 1px solid @color-border;
-}
-
-panel, .panel {
+panel {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -98,6 +91,8 @@ stack {
   filter: invert(100%);
 }
 
+
+//The 'disabler'. This is an element you put over anything to disable it.
 .disabler-enabled {
   box-sizing: border-box;
   position: absolute;

@@ -38,10 +38,8 @@
 @color-inverted-focus-border: @white;
 @color-inverted-border: fade(@white, @faded);
 
-.hide {
-  display: none !important;
-}
 
+//transformation macros
 .transform(@transform) {
   transform: @transform;
   -webkit-transform: @transform;
@@ -52,6 +50,18 @@
   -webkit-transform-origin: @transform;
 }
 
+//animation macros
+.animation (@arguments) {
+  animation: @arguments;
+  -webkit-animation: @arguments;
+}
+
+.transition(...) {
+  transition: @arguments;
+  -webkit-transition: @arguments;
+}
+
+//Background and coloring mixins
 //A flat background isn't really flat, it would look odd
 .flat {
   background-image: linear-gradient(fade(@black, 1%), fade(@black, 2%) 80%, fade(@black, 1%));
@@ -65,40 +75,22 @@
   background-image: linear-gradient(fade(@black, @faded), fade(@black, @faded + 6%) 80%, fade(@black, @faded + 4%));
 }
 
+.tint {
+  background-image: linear-gradient(fade(@black, @disabled), fade(@black, @disabled + 6%) 80%, fade(@black, @disabled + 4%));
+}
+
 .light-tint {
   background-image: linear-gradient(fade(@white, @faded), fade(@white, @faded + 6%) 80%, fade(@white, @faded + 4%));
 }
-
 //color inversion, this is useful to disable things
 .invert {
   -webkit-filter: invert(0.9);
   filter: invert(0.9);
 }
 
-//border with a shadow
-.border {
-  border: 1px solid @color-border;
-}
-.bottom-border {
-  border-bottom: 1px solid @color-border;
-}
-.bottom-inverted-border {
-  border-bottom: 1px solid @color-inverted-border;
-}
 
-.focused-border {
-  border: 1px solid @color-focus-border;
-}
-.bottom-focused-border {
-  border-bottom: 1px solid @color-focus-border;
-}
-.bottom-inverted-focused-border {
-  border-bottom: 1px solid @color-inverted-focus-border;
-}
-.focused-highlight {
-  .box-shadow(0px 0px 2px -1px @color-focus-border inset);
-}
-
+//The web lets you pick up text a lot by default, but sometimes you need
+//to just have the control be a control and not content.
 .cannot-select-text {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -106,11 +98,6 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.transition(...) {
-  transition: @arguments;
-  -webkit-transition: @arguments;
 }
 
 .box-shadow(...) {
@@ -121,88 +108,6 @@
 .backface-visibility(@t) {
   backface-visibility: @t;
   -webkit-backface-visibility: @t;
-}
-
-//Flag Indicator Icons
-.solid.flag {
-  &:before {
-    font-size: 1.5em;
-    content: "\25a3";
-    font-style: normal;
-  }
-}
-.yellow.flag {
-  &:before {
-    -webkit-text-fill-color: @yellow;
-    -webkit-text-stroke: 1px @color-text;
-  }
-}
-.red.flag {
-  &:before {
-    -webkit-text-fill-color: @red;
-    -webkit-text-stroke: 1px @color-text;
-  }
-}
-.green.flag {
-  &:before {
-    -webkit-text-fill-color: @green;
-    -webkit-text-stroke: 1px @color-text;
-  }
-}
-.grey.flag {
-  &:before {
-    -webkit-text-fill-color: @grey;
-    -webkit-text-stroke: 1px @color-text;
-  }
-}
-
-//Attributes to toggle away visibility
-[animated] {
-  opacity: 1.0;
-  .transition(width @transition, opacity @transition;);
-}
-
-[animated][hide] {
-  display: inline-block !important;
-  width: 0 !important;
-  opacity: 0 !important;
-}
-
-[fadeout] {
-  opacity: 1.0;
-  .transition(opacity @transition);
-}
-
-[fadeout][hide] {
-  opacity: 0 !important;
-}
-
-[closeup] {
-  opacity: 1.0;
-  .transition(height @transition, opacity @transition;);
-}
-
-[closeup][hide] {
-  display: inline-block !important;
-  height: 0 !important;
-  opacity: 0 !important;
-}
-
-[tile] {
-  padding: 1em;
-  background-color: @hairline-grey;
-  border: 1px solid @hairline-grey;
-}
-
-[animated] {
-  opacity: 1.0;
-  .transition(width @transition, opacity @transition;);
-}
-
-[animated][hide] {
-  display: inline-block !important;
-  width: 0 !important;
-  opacity: 0 !important;
 }
 
 [offscreen] {
@@ -227,18 +132,4 @@
 
 [magenta], [lavender] {
   color: @lavender;
-}
-
-//animation macros
-.animation (@arguments) {
-  animation: @arguments;
-  -webkit-animation: @arguments;
-}
-
-.slideUp {
-  .animation(slideUp 1s 1 ease-out);
-}
-
-.slideDown {
-  .animation(slideDown 1s 1 ease-out);
 }
