@@ -1,3 +1,5 @@
+@import "./colors.less";
+
 @deep: ~'/deep/';
 @borderRadius: 0;
 @nearlyOpaque: 85%;
@@ -8,21 +10,6 @@
 @animation-duration-fast: 0.6s;
 @transition: 0.2s ease-out;
 @input-transition: 0.1s ease-out;
-@white: #fff;
-@black: #333333;
-@grey: fade(@black, @faded);
-@light-grey: fade(@black, @disabled);
-@hairline-grey: fade(@black, @justahint);
-@green:#c8ed8d;
-@red: #ef272d;
-@yellow: #fae843;
-@blue: #0088cc;
-@lavender: #ac92ec;
-@secondary-green: #719a2e;
-@secondary-red: #9b0d10;
-@secondary-yellow: #ead406;
-@secondary-blue: #005580;
-@secondary-lavender: #967adc;
 
 @color-text: #454545;
 @color-disabled-text: fade(@color-text, @disabled);
@@ -112,24 +99,4 @@
 
 [offscreen] {
   .transform(translateY(2000em));
-}
-
-[red] {
-  color: @red;
-}
-
-[yellow] {
-  color: @yellow;
-}
-
-[green] {
-  color: @green;
-}
-
-[blue] {
-  color: @blue;
-}
-
-[magenta], [lavender] {
-  color: @lavender;
 }
