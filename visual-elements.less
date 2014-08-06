@@ -2,7 +2,7 @@
 @import "./flags.less";
 @import "./borders.less";
 
-container {
+container, [container] {
   display: block;
   max-width: 60em;
   margin-top: 0;
@@ -12,7 +12,7 @@ container {
   overflow: visible;
 }
 
-box {
+box, [box] {
   display: block;
   padding: 1em;
   margin-top: 0.5em;
@@ -22,7 +22,7 @@ box {
   .border;
 }
 
-background {
+background, [background] {
   display: block;
   position: relative;
   width: 100%;
@@ -35,7 +35,7 @@ background[inverted] {
   color: @white;
 }
 
-panel {
+panel, [panel] {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -44,15 +44,19 @@ panel {
 }
 
 //layout control, fill up the entire parent screen
-[fullscreen], [full], .full {
+fullscreen, [fullscreen], [full], .full {
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  margin: 0;
+  padding: 0;
 }
 
 [fill], .fill {
+  line-height: 1;
   position: relative;
   top: 0;
   left: 0;
@@ -61,7 +65,7 @@ panel {
 }
 
 //layout control, dock to the left of the screen
-[leftdock] {
+leftdock, [leftdock] {
   position: fixed;
   top: 0;
   left: 0;
@@ -69,21 +73,30 @@ panel {
 }
 
 //stack children right on top of one another
-stack {
+stack, [stack] {
   position: relative;
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  & > :nth-child(1) {
+  }
   & > :nth-child(2) {
     position: absolute;
-    left: -27%;
-    top: -23%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 }
 
 [larger], .larger {
   font-size: 1.5em;
-  line-height: 1em;
+  line-height: 1.5em;
+}
+
+[smaller], .smaller {
+  font-size: 0.62em;
+  line-height: 0.62em;
 }
 
 [invert], .invert {
