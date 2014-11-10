@@ -8,7 +8,8 @@
 @faded: 61%;
 @animation-duration: 1s;
 @animation-duration-fast: 0.6s;
-@transition: 0.2s ease-out;
+@transition: 0.2s cubic-bezier(0.4, 0.0, 1, 1);
+@pad: 0.55em;
 @input-transition: 0.1s ease-out;
 
 @color-text: #454545;
@@ -26,6 +27,9 @@
 @color-border: @hairline-grey;
 @color-inverted-focus-border: @white;
 @color-inverted-border: fade(@white, @faded);
+
+@color-active-border: @color-text;
+@color-active: @color-text;
 
 
 //transformation macros
@@ -51,24 +55,28 @@
 }
 
 //Background and coloring mixins
+.transparent, [transparent] {
+  background-image: none;
+  background-color: transparent;
+}
 //A flat background isn't really flat, it would look odd
-.flat {
+.flat, [flat] {
   background-image: linear-gradient(fade(@black, 1%), fade(@black, 2%) 80%, fade(@black, 1%));
 }
 
-.ultra-dark-tint {
+.ultra-dark-tint, [ultra-dark-tint] {
   background-image: linear-gradient(fade(@black, @nearlyOpaque), fade(@black, @nearlyOpaque + 6%) 80%, fade(@black, @nearlyOpaque + 4%));
 }
 
-.dark-tint {
+.dark-tint, [dark-tint] {
   background-image: linear-gradient(fade(@black, @faded), fade(@black, @faded + 6%) 80%, fade(@black, @faded + 4%));
 }
 
-.tint {
+.tint, [tint] {
   background-image: linear-gradient(fade(@black, @disabled), fade(@black, @disabled + 6%) 80%, fade(@black, @disabled + 4%));
 }
 
-.light-tint {
+.light-tint, [light-tint] {
   background-image: linear-gradient(fade(@white, @faded), fade(@white, @faded + 6%) 80%, fade(@white, @faded + 4%));
 }
 //color inversion, this is useful to disable things
