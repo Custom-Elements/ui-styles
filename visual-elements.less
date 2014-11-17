@@ -2,6 +2,13 @@
 @import "./flags.less";
 @import "./borders.less";
 
+.one-shadow {
+  .box-shadow(1px 1px 1px @hairline-grey);
+}
+.two-shadow {
+  .box-shadow(2px 2px 2px @hairline-grey);
+}
+
 container, [container] {
   display: block;
   max-width: 60em;
@@ -20,6 +27,10 @@ box, [box] {
   margin-bottom: 1em;
   margin-left: 0;
   .border;
+}
+
+circle, .circle {
+  border-radius: 50%;
 }
 
 background, [background] {

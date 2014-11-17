@@ -9,11 +9,14 @@
 @animation-duration: 1s;
 @animation-duration-fast: 0.6s;
 @transition: 0.2s cubic-bezier(0.4, 0.0, 1, 1);
-@pad: 0.55em;
+@pad: 0.5em;
+@micropad: 0.25em;
+@margin: 0.5em;
 @input-transition: 0.1s ease-out;
+@line-height: 1.5em;
 
 @color-text: #454545;
-@color-disabled-text: fade(@color-text, @disabled);
+@color-disabled-text: @dark-grey;
 @color-inverted-text: @white;
 @color-inverted-disabled-text: fade(@white, @disabled);
 @color-info: @blue;
@@ -21,7 +24,7 @@
 @color-error: @secondary-red;
 @color-success: @secondary-green;
 
-@color-focus-border: @light-grey;
+@color-focus-border: @grey;
 @color-focus: @hairline-grey;
 
 @color-border: @hairline-grey;
@@ -30,6 +33,11 @@
 
 @color-active-border: @color-text;
 @color-active: @color-text;
+
+.disabled {
+  opacity: unit(@disabled) / 100;
+  color: @color-disabled-text;
+}
 
 
 //transformation macros
