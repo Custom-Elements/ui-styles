@@ -2,16 +2,19 @@ dl, ol, ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 
 li {
-  padding-top: .25em;
-  padding-bottom: .25em;
   border-bottom: 1px dotted @hairline-grey;
 }
 
 li[dotted] {
-  list-style-type: square;
+  list-style-type: none;
+  &:before {
+    content: '\25E6';
+    margin-right: @margin;
+  }
 }
 
 li:last-child {

@@ -5,12 +5,13 @@
 @import "tables.less";
 @import "borders.less";
 
-html {
+:host, html {
   font-style: normal;
   font-weight: 200;
   color: @color-text;
   -webkit-font-smoothing: antialiased;
 }
+
 
 hr {
   border: 0;
@@ -24,7 +25,6 @@ a {
   vertical-align: baseline;
   font-style: normal;
   font-weight: normal;
-  font-weight: 700;
   color: @red;
   text-decoration: none;
   cursor: pointer;
@@ -142,7 +142,6 @@ sub {
 mark {
   background: yellow;
 }
-
 
 
 input, textarea {
