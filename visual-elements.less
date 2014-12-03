@@ -19,10 +19,23 @@
   opacity: 0;
 }
 
-[spaced] {
-  * {
+[horizontal][spaced] {
+  > * {
     margin-right: @margin;
   }
+}
+
+[vertical][spaced] {
+  > * {
+    margin-bottom: @margin;
+  }
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+[padded] {
+  padding: @pad;
 }
 
 container, [container] {
@@ -130,31 +143,31 @@ stack, [stack] {
 }
 
 //handy colors
-[red] {
+[red], .red {
   color: @red;
 }
 
-[orange] {
+[orange], .orange {
   color: @orange;
 }
 
-[yellow] {
+[yellow], .yellow {
   color: @yellow;
 }
 
-[green] {
+[green], .green {
   color: @green;
 }
 
-[blue] {
+[blue], .blue {
   color: @blue;
 }
 
-[indigo] {
+[indigo], .indigo {
   color: @indigo;
 }
 
-[violet] {
+[violet], .violet {
   color: @violet;
 }
 
