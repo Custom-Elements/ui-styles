@@ -75,7 +75,7 @@ background[inverted] {
   color: @white;
 }
 
-panel, [panel] {
+panel, [panel], .panel {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -85,7 +85,7 @@ panel, [panel] {
 
 //layout control, fill up the entire parent screen
 fullscreen, [fullscreen], [full], .full {
-  display: block;
+  display: flex;
   position: absolute;
   top: 0;
   left: 0;
@@ -96,6 +96,7 @@ fullscreen, [fullscreen], [full], .full {
 }
 
 [fill], .fill {
+  display: flex;
   line-height: 1;
   position: relative;
   top: 0;
