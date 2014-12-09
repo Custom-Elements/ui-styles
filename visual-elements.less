@@ -15,6 +15,13 @@
   }
 }
 
+.disabled {
+  opacity: unit(@disabled) / 100;
+  background: transparent;
+  color: @color-disabled-text;
+  cursor: default;
+}
+
 [invisible] {
   opacity: 0;
 }
@@ -219,4 +226,10 @@ stack, [stack] {
 
 [clickable] {
   cursor: pointer;
+}
+
+icon {
+  display: inline-flex;
+  //super tiny padding to let font-awesome draw without overlap
+  padding: 0.1em;
 }
