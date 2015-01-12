@@ -16,9 +16,13 @@
 }
 
 .disabled {
-  opacity: unit(@disabled) / 100;
-  background: transparent;
-  color: @color-disabled-text;
+  background: repeating-linear-gradient(
+    45deg,
+    @hairline-white,
+    @hairline-white 0.5em,
+    @hairline-grey 0.5em,
+    @hairline-grey 1em
+  );
   cursor: default;
 }
 
@@ -220,7 +224,7 @@ stack, [stack] {
 }
 
 //The 'disabler'. This is an element you put over anything to disable it.
-.disabler-enabled {
+.disabler {
   box-sizing: border-box;
   position: absolute;
   top: 0;
@@ -228,14 +232,17 @@ stack, [stack] {
   bottom: 0;
   right: 0;
   .transition(@transition);
-  .transform(rotateX(180deg));
   .backface-visibility(hidden);
+}
+
+.disabler-enabled {
+  .transform(rotateX(180deg));
+  .disabled;
 }
 
 .disabler-disabled {
   .transform(rotateX(0deg));
-  background-color: @hairline-grey;
-  .flat;
+  .disabled;
 }
 
 [clickable] {
