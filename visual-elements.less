@@ -59,6 +59,10 @@ row[padded] {
   }
 }
 
+row[spaced] {
+  margin-bottom: @margin;
+}
+
 column[padded] {
   padding: 0;
   padding-left: @pad;
@@ -258,4 +262,9 @@ linefeed {
   display: block;
   height: 1em;
   width: 100%;
+}
+
+pad {
+  display: block;
+  padding: @pad;
 }
