@@ -100,6 +100,7 @@ box, [box] {
 row {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   &[start] {
     justify-content: flex-start;
   }
@@ -114,7 +115,6 @@ row {
 column {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 circle, .circle {
@@ -272,4 +272,8 @@ pad {
   display: flex;
   flex: 1;
   padding: @pad;
+}
+
+[expand] {
+  flex: 1;
 }
