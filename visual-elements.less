@@ -110,6 +110,9 @@ row {
   &[end] {
     justify-content: flex-end;
   }
+  &[inherit] {
+    justify-content: inherit;
+  }
 }
 
 column {
@@ -208,6 +211,10 @@ stack, [stack] {
 }
 
 //handy colors
+[grey], [gray], .grey, .gray {
+  color: @grey;
+}
+
 [red], .red {
   color: @red;
 }
