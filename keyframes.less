@@ -58,6 +58,18 @@
 @keyframes rainbow {.rainbowKeyframes;}
 @-webkit-keyframes rainbow {.rainbowKeyframes;}
 
+.rainbowBackgroundKeyframes {
+  0%   { background-color: @red; }
+  15%  { background-color: @orange; }
+  30%  { background-color: @yellow; }
+  44%  { background-color: @green; }
+  62%  { background-color: @blue; }
+  78% { background-color: @indigo; }
+  100% { background-color: @violet; }
+}
+@keyframes rainbowBackground {.rainbowBackgroundKeyframes;}
+@-webkit-keyframes rainbowBackground {.rainbowBackgroundKeyframes;}
+
 [rainbow] {
   animation: rainbow @animation-duration infinite linear;
   -webkit-animation: rainbow @animation-duration infinite linear;
